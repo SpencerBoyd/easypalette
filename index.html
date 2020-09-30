@@ -60,5 +60,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
   <script src="examples/js/demo.js"></script>
 
+<script>
+    $(function() {
+      $('#nav').on('click', '.nav-link', function(event) {
+        event.preventDefault();
+        var hash = this.hash;
+
+        $('html, body').animate({
+         scrollTop: $(hash).offset().top
+        }, 600, function() {
+          window.location.hash = hash;
+        });
+      });
+    });
+  </script>
+	
+	
 </body>
 </html>
